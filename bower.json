@@ -1,0 +1,22 @@
+{
+  "name": "web-portal",
+  "description": "",
+  "main": "",
+  "authors": [
+    "John Brandenburg <jcb7d7@umsl.edu>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/jcb7d7/appointmentScheduler",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^4.1.1",
+    "jquery": "^3.3.1"
+  }
+}
