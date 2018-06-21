@@ -19,6 +19,33 @@
   <![endif]-->
 </head>
 <body>
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script>
+    function start() {
+      // 2. Initialize the JavaScript client library.
+      gapi.client.init({
+        'apiKey': 'AIzaSyBjYGtpOGJpb4178wvkMn6mI09Tn60UMCg',
+        // Your API key will be automatically added to the Discovery Document URLs.
+        'discoveryDocs': ['https://people.googleapis.com/$discovery/rest'],
+        // clientId and scope are optional if auth is not required.
+        'clientId': '328428185333-bkh67c6rdhobpso5q5ueph3pobrr1hj5.apps.googleusercontent.com',
+        'scope': 'profile',
+      }).then(function() {
+        // 3. Initialize and make the API request.
+        return gapi.client.request({
+          path: 'https://www.googleapis.com/calendar/v3/users/me/calendarList',
+          method: 'GET',
+          params: {'key': 'AIzaSyBjYGtpOGJpb4178wvkMn6mI09Tn60UMCg'}
+        });
+      }).then(function(response) {
+        console.log(response.result);
+      }, function(reason) {
+        console.log('Error: ' + reason);
+      });
+    };
+    // 1. Load the JavaScript client library.
+    gapi.load('client', start);
+    </script>
   <app-root></app-root>
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="assets/bower_components/jquery/dist/jquery.min.js"></script>
